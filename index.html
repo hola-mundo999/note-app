@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NoteNest</title>
+    <link rel="stylesheet" href="style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+  </head>
+  <body>
+
+    <!-- ── SIDEBAR ── -->
+    <aside class="sidebar">
+      <div class="brand">
+        <span class="brand-icon">🪶</span>
+        <span class="brand-name">NoteNest</span>
+      </div>
+
+      <button class="btn-new" id="btnNew">+ New Note</button>
+
+      <div class="search-wrap">
+        <input
+          type="text"
+          id="searchInput"
+          class="search-input"
+          placeholder="Search notes…"
+        />
+      </div>
+
+      <p class="notes-count"><span id="notesCount">0</span> notes</p>
+
+      <ul class="notes-list" id="notesList"></ul>
+    </aside>
+
+    <!-- ── EDITOR PANEL ── -->
+    <main class="editor" id="editorPanel">
+
+      <div class="empty-state" id="emptyState">
+        <div class="empty-icon">🪶</div>
+        <h2>Select a note or create one</h2>
+        <p>Your thoughts deserve a beautiful home.</p>
+      </div>
+
+      <div class="editor-form hidden" id="editorForm">
+        <button class="btn-back" id="btnBack">← Back</button>
+        <div class="editor-header">
+          <input
+            type="text"
+            id="noteTitle"
+            class="note-title-input"
+            placeholder="Note title…"
+          />
+          <span class="note-date" id="noteDate"></span>
+        </div>
+
+        <textarea
+          id="noteBody"
+          class="note-body-input"
+          placeholder="Start writing…"
+        ></textarea>
+
+        <div class="editor-actions">
+          <button class="btn-save" id="btnSave">Save</button>
+          <button class="btn-delete" id="btnDelete">Delete</button>
+        </div>
+      </div>
+
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
