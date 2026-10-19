@@ -23,7 +23,31 @@ function saveNotes() {
 }
 
 function loadNotes() {
-    Notes = JSON.parse(localStorage.getItem('notes')) || [];
+    const saved = localStorage.getItem('notes');
+    if (saved) {
+        try {
+            Notes = JSON.parse(saved);
+        } catch {
+            Notes = [];
+        }
+    }
+    if (!Notes || Notes.length === 0) {
+        Notes = [
+            {
+                id: 1,
+                title: "Welcome to NoteNest",
+                body: "A clean, responsive notebook for your ideas, study notes, and code snippets.\n\nCreated by Samyog Sapkota. All notes are saved automatically to your browser storage.",
+                date: new Date().toLocaleDateString()
+            },
+            {
+                id: 2,
+                title: "Frontend Engineering Goals",
+                body: "1. Build fluid WebGL and Canvas animations\n2. Master high-performance React component patterns\n3. Deliver production-ready apps with zero friction",
+                date: new Date().toLocaleDateString()
+            }
+        ];
+        saveNotes();
+    }
 }
 
 // ── RENDER ──
