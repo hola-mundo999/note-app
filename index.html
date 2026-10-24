@@ -31,6 +31,16 @@
       <p class="notes-count"><span id="notesCount">0</span> notes</p>
 
       <ul class="notes-list" id="notesList"></ul>
+
+      <div class="sidebar-tools">
+        <button class="btn-tool" id="btnExport" type="button" title="Download every note as a JSON backup">
+          &#x2B07; Export
+        </button>
+        <button class="btn-tool" id="btnImport" type="button" title="Load notes from a JSON backup">
+          &#x2B06; Import
+        </button>
+        <input type="file" id="importFile" accept=".json,application/json" hidden />
+      </div>
     </aside>
 
     <!-- ── EDITOR PANEL ── -->
@@ -62,6 +72,7 @@
 
         <div class="editor-actions">
           <button class="btn-save" id="btnSave">Save note</button>
+          <button class="btn-pin" id="btnPin" type="button" aria-pressed="false" hidden>&#x2606; Pin note</button>
           <button class="btn-delete" id="btnDelete">Delete</button>
           <span class="note-words" id="noteWords"></span>
         </div>

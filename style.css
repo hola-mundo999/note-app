@@ -444,3 +444,100 @@ body {
   .editor-actions { flex-wrap: wrap; }
   .note-words { width: 100%; margin-left: 0; order: 3; }
 }
+
+/* ── PIN + BACKUP (added features) ── */
+.note-card-top {
+  display: flex;
+  align-items: flex-start;
+  gap: 6px;
+}
+
+.note-card-top .note-card-title { flex: 1; min-width: 0; }
+
+.pin-toggle {
+  flex-shrink: 0;
+  width: 22px;
+  height: 22px;
+  display: grid;
+  place-items: center;
+  padding: 0;
+  border: none;
+  border-radius: 6px;
+  background: transparent;
+  color: var(--ink-muted);
+  font-size: 0.9rem;
+  line-height: 1;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity .15s, color .15s, background .15s;
+}
+
+.note-card:hover .pin-toggle,
+.note-card.active .pin-toggle,
+.note-card.is-pinned .pin-toggle,
+.pin-toggle:focus-visible { opacity: 1; }
+
+.pin-toggle:hover { color: var(--accent); background: var(--accent-soft); }
+
+.pin-toggle[aria-pressed="true"] { color: var(--accent); }
+
+.note-card.is-pinned {
+  background: linear-gradient(90deg, var(--accent-soft), transparent 70%);
+}
+
+.note-card.is-pinned .note-card-title { color: var(--accent); }
+
+.button-pin { color: var(--accent); }
+
+.btn-pin {
+  padding: 10px 18px;
+  background: transparent;
+  color: var(--ink-muted);
+  border: 1.5px solid var(--cream-dark);
+  border-radius: var(--radius);
+  font-family: var(--font-body);
+  font-size: .9rem;
+  cursor: pointer;
+  transition: border-color .2s, color .2s, background .2s;
+}
+
+.btn-pin:hover { color: var(--accent); border-color: var(--accent); }
+
+.btn-pin.is-pinned {
+  color: var(--accent);
+  border-color: var(--accent);
+  background: var(--accent-soft);
+}
+
+.sidebar-tools {
+  display: flex;
+  gap: 8px;
+  padding-top: 14px;
+  border-top: 1.5px solid var(--cream-dark);
+}
+
+.btn-tool {
+  flex: 1;
+  padding: 8px 10px;
+  background: var(--cream);
+  color: var(--ink-light);
+  border: 1.5px solid var(--cream-dark);
+  border-radius: var(--radius);
+  font-family: var(--font-body);
+  font-size: .78rem;
+  letter-spacing: .2px;
+  cursor: pointer;
+  transition: border-color .2s, color .2s, background .2s;
+}
+
+.btn-tool:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+  background: var(--accent-soft);
+}
+
+@media (max-width: 600px) {
+  .pin-toggle { opacity: 1; }
+  .editor-actions { flex-wrap: wrap; }
+  .note-words { width: 100%; }
+}

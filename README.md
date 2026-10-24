@@ -12,6 +12,10 @@ A clean, local-first notes app built with vanilla HTML, CSS and JavaScript. Note
 - **Newest first** ordering so the latest thought is always at the top
 - **Active highlight** in the list for the note you have open
 - **Word count** as you type, plus inline feedback when a save has nothing to store
+- **Pin** a note (★ on the card or in the editor) to keep it at the top of the list, on screen and
+  in storage
+- **Export** every note as a dated JSON backup; **Import** merges a backup back in, with validation
+  and a confirm step that names how many notes will be added
 - **Keyboard shortcuts**: `Ctrl/⌘ + S` saves, `Esc` closes the editor, `Enter` in the title jumps
   to the body
 - **Safe rendering** — titles and bodies are escaped, so markup in a note is shown as text, never run
