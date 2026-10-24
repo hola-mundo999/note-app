@@ -3,7 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>NoteNest</title>
+    <title>NoteNest — a local-first notebook</title>
+    <meta name="description" content="A clean, local-first notebook: create, edit, search and delete notes saved in your browser." />
     <link rel="stylesheet" href="style.css" />
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
   </head>
@@ -60,12 +61,15 @@
         ></textarea>
 
         <div class="editor-actions">
-          <button class="btn-save" id="btnSave">Save</button>
+          <button class="btn-save" id="btnSave">Save note</button>
           <button class="btn-delete" id="btnDelete">Delete</button>
+          <span class="note-words" id="noteWords"></span>
         </div>
       </div>
 
     </main>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
     <script src="app.js"></script>
   </body>

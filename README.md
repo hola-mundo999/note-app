@@ -1,37 +1,42 @@
 # 🪶 NoteNest
 
-A clean, minimal notes app built with vanilla HTML, CSS, and JavaScript. Notes are saved to localStorage so they persist across page refreshes.
-
+A clean, local-first notes app built with vanilla HTML, CSS and JavaScript. Notes are saved to
+`localStorage`, so they survive refreshes without an account or a server.
 
 ## ✨ Features
 
 - **Create** notes with a title and body
-- **Edit** existing notes
-- **Delete** notes with one click
-- **Search** notes by title or body in real time
-- **Persistent storage** — notes survive page refresh using localStorage
-
+- **Edit** existing notes — the timestamp updates, the note keeps its place
+- **Delete** with a confirmation step that names the note
+- **Search** title and body in real time, with a "2 of 7" result count
+- **Newest first** ordering so the latest thought is always at the top
+- **Active highlight** in the list for the note you have open
+- **Word count** as you type, plus inline feedback when a save has nothing to store
+- **Keyboard shortcuts**: `Ctrl/⌘ + S` saves, `Esc` closes the editor, `Enter` in the title jumps
+  to the body
+- **Safe rendering** — titles and bodies are escaped, so markup in a note is shown as text, never run
+- Responsive: the sidebar becomes a slide-over on phones with a Back button
 
 ## 🛠️ Built With
 
 - HTML5
 - CSS3 (custom properties, flexbox, animations)
 - JavaScript (ES6+)
-- localStorage API
+- `localStorage`
 
 ## 💡 JavaScript Concepts Used
 
-- CRUD operations (Create, Read, Update, Delete)
-- localStorage with `JSON.stringify` and `JSON.parse`
-- Array methods — `push`, `filter`, `find`, `map`
-- DOM manipulation — `classList`, `innerHTML`, `value`
-- Event delegation for dynamically created elements
-- Unique IDs with `Date.now()`
+- CRUD over a single source of truth, persisted with `JSON.stringify` / `JSON.parse`
+- Array methods — `filter`, `find`, `sort`, `map`
+- Event delegation for dynamically created list items
+- HTML escaping before injecting user text into the DOM
+- Debounce-free live search over an in-memory list
+- Keyboard event handling (`keydown`, modifier keys)
 
 ## 📁 Project Structure
 
-```
-notenest/
+```text
+note-app/
 ├── index.html
 ├── style.css
 ├── app.js
@@ -40,16 +45,4 @@ notenest/
 
 ## 🚀 How to Run
 
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/hola-mundo999/notenest.git
-   ```
-2. Open `index.html` in your browser — no installation needed!
-
-## 📚 What I Learned
-
-This project is part of my JavaScript learning roadmap (Level 2 — DOM Manipulation & localStorage). Building NoteNest helped me understand how real-world CRUD applications work, how to persist data in the browser, and how to manage application state with a single source of truth.
-
----
-
-Made with 🪶 by [Fiza](https://github.com/hola-mundo999)
+Open `index.html` in any browser — no install and no build step.
